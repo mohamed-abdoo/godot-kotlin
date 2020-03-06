@@ -11,6 +11,7 @@ const godot_gdnative_core_1_1_api_struct *api11 = NULL;
 const godot_gdnative_core_1_2_api_struct *api12 = NULL;
 
 const godot_gdnative_ext_nativescript_api_struct *nativescript_api = NULL;
+const godot_gdnative_ext_nativescript_1_1_api_struct *nativescript_api11 = NULL;
 void *nativescript_handle = NULL;
 
 
@@ -24,6 +25,7 @@ static void godot_wrapper_gdnative_init(godot_gdnative_init_options *p_options) 
         switch (api->extensions[i]->type) {
             case GDNATIVE_EXT_NATIVESCRIPT: {
                 nativescript_api = (godot_gdnative_ext_nativescript_api_struct *) api->extensions[i];
+                nativescript_api11 = (godot_gdnative_ext_nativescript_1_1_api_struct *) (nativescript_api->next);
             };  break;
             default:
                 break;
@@ -33,7 +35,10 @@ static void godot_wrapper_gdnative_init(godot_gdnative_init_options *p_options) 
 
 static void godot_wrapper_gdnative_terminate(godot_gdnative_terminate_options *p_options) {
     api = NULL;
+    api11 = NULL;
+    api12 = NULL;
     nativescript_api = NULL;
+    nativescript_api11 = NULL;
 }
 
 static void godot_wrapper_nativescript_init(void *handle) {
