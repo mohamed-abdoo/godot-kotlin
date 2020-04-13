@@ -1,5 +1,6 @@
 package godot.core
 
+import godot.Object
 import kotlinx.cinterop.*
 import kotlin.native.concurrent.AtomicReference
 import kotlin.native.concurrent.freeze
@@ -20,7 +21,7 @@ open class Object(__ignore: String?) {
     open fun _onDestroy() {}
 
     fun emitSignal(name: String, vararg args: Any?) {}
-    fun connect(name: String, target: Object, method: String, extraArgs: VariantArray<Any>, flags: Int) {}
+    fun connect(name: String, target: Object, method: String, extraArgs: VariantArray, flags: Int) {}
 }
 object ClassDB {
     fun getParentClass(cls: String): String = ""
