@@ -49,8 +49,8 @@ val generateAPI by tasks.creating(GenerateApiTask::class) {
 }
 
 tasks {
-    build {
-        dependsOn(generateAPI)
+    matching { it.name.startsWith("compileKotlin") }.forEach {
+        it.dependsOn(generateAPI)
     }
 }
 tasks {
