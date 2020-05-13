@@ -3,6 +3,7 @@
 package godot.core
 
 import godot.gdnative.*
+import godot.internal.type.NativeCoreType
 import kotlinx.cinterop.*
 
 class PoolVector3Array : NativeCoreType<godot_pool_vector3_array>, Iterable<Vector3> {

@@ -3,6 +3,7 @@
 package godot.core
 
 import godot.gdnative.*
+import godot.internal.type.NativeCoreType
 import kotlinx.cinterop.*
 import platform.posix.off_t
 

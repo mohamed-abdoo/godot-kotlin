@@ -3,6 +3,7 @@
 package godot.core
 
 import godot.gdnative.*
+import godot.internal.type.CoreType
 import kotlinx.cinterop.*
 
 

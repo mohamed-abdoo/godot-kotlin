@@ -3,6 +3,7 @@
 package godot.core
 
 import godot.gdnative.*
+import godot.internal.type.NativeCoreType
 import kotlinx.cinterop.*
 
 class PoolStringArray : NativeCoreType<godot_pool_string_array>, Iterable<String> {
